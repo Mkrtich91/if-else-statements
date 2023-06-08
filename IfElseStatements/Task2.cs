@@ -4,14 +4,52 @@
     {
         public static int DoSomething1(bool b1, bool b2)
         {
-            // TODO Implement the method.
-            throw new NotImplementedException();
+            int result = 0;
+
+            if (b1 && b2)
+            {
+                result = 123;
+            }
+
+            if (b1 && !b2)
+            {
+                result = -345;
+            }
+
+            if (!b1 && b2)
+            {
+                result = -567;
+            }
+
+            if (!b1 && !b2)
+            {
+                result = 789;
+            }
+
+            return result;
         }
 
         public static int DoSomething2(bool b1, bool b2)
         {
-            // TODO Implement the method.
-            throw new NotImplementedException();
+            int result = 0;
+            if (b1 && b2)
+            {
+                result = 123;
+            }
+            else if (b1 && !b2)
+            {
+                result = -345;
+            }
+            else if (!b1 && b2)
+            {
+                result = -567;
+            }
+            else if (!b1 && !b2)
+            {
+                result = 789;
+            }
+
+            return result;
         }
     }
 }

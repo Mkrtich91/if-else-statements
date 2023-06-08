@@ -452,7 +452,7 @@ namespace IfStatements.Tests
             return Task8.DoSomething(i1, i2);
         }
 
-        [Test, Ignore("Utility for generating test cases")]
+        [Test]
         public void GenerateTestCases()
         {
             const string template = "[TestCase({0}, {1}, ExpectedResult = {2})]";
@@ -461,8 +461,9 @@ namespace IfStatements.Tests
             {
                 for (int i2 = 0; i2 <= 10; i2++)
                 {
+                    var expected = Task8.DoSomething(i1, i2);
                     var result = Task8.DoSomething(i1, i2);
-
+                    Assert.AreEqual(expected, result, $"Test failed for inputs ({i1}, {i2})");
                     Debug.WriteLine(template, i1, i2, result);
                 }
 
